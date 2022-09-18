@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://'mongodb+srv://mrleon:tTl2CJQwuULohtBN@clusternoel.na3wadp.mongodb.net/?retryWrites=true&w=majority'PASSWORD_COOKIE = 'ciao'",
+            "request": "launch",
+            "url": "http://'mongodb+srv://mrleon:tTl2CJQwuULohtBN@clusternoel.na3wadp.mongodb.net/?retryWrites=true&w=majority'PASSWORD_COOKIE = 'ciao'"
+        }
+    ]
+}
