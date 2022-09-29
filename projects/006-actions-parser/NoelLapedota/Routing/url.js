@@ -3,7 +3,8 @@ const router = express.Router();
 const fs = require('fs');
 const fetch = require("node-fetch");
 const validUrl = require('valid-url');
-const callFirstApi = require('./func')
+const callFirstApi = require('./func');
+const callSecondApi = require('./func');
 
 
 //GET
@@ -54,12 +55,7 @@ router.get('/location',(req, res)=>{
       //       })
       //     };
 
-      const callSecondApi = async (url)=>{
-        console.log('url seconda api', url)
-              let response = await fetch(url)
-              let user = await response.json()
-              return JSON.stringify(user)
-          };
+    
             
       
       

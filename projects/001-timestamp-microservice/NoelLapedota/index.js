@@ -25,8 +25,8 @@ app.get('/api/:date', (req, res) => {
     //The isNaN() function determines whether a value is NaN or not
     if (isNaN(inputDate) == false) {
         inputDate = parseInt(inputDate)
-         utcDate = new Date(inputDate).toUTCString()
-         resObj = {
+        utcDate = new Date(inputDate).toUTCString()
+        resObj = {
             unix : inputDate,
             utc : utcDate
         }

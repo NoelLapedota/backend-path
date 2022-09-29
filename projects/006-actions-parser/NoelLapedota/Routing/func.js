@@ -7,4 +7,15 @@ const callFirstApi = (url)=>{
     return data  
    })
  };
- module.exports = callFirstApi
+
+
+const callSecondApi = async (url)=>{
+  console.log('url seconda api', url)
+        let response = await fetch(url)
+        let user = await response.json()
+        return JSON.stringify(user)
+    };
+ module.exports = {
+  callFirstApi,
+  callSecondApi
+ }

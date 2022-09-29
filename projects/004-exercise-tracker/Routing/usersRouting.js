@@ -8,12 +8,12 @@ const bodyParser = require('body-parser');
 
 
 //The returned response from POST /api/users with form data username will be an object with username and _id properties.
-router.post('/users',(req, res, next) =>{
+router.post('/users',(req, res) =>{
   newUser = req.body
 
   
 res.json({'name': newUser.username,'id' : newUser._id})
-next()
+res.end()
 });
 
 //The GET request to /api/users returns an array-----
@@ -26,17 +26,13 @@ next()
 //Each element in the array returned from GET /api/users is an object literal containing a user's username and _id.
 
 router.get('/users', (req, res) =>{
-   const usernameAnd_Id = user.map((users =>{
-    const{username, _id} = users
-    return {username, _id}
-   }))
+    const usernameAnd_Id = user.map((users =>{
+          const{username, _id} = users
+          return {username, _id}
+    }))
    res.json(usernameAnd_Id)
    
    });
-
-
-
-
 
 
 
