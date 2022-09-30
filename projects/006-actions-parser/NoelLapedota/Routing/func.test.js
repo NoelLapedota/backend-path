@@ -6,4 +6,4 @@ test('the data object contains success: true', () => {
     return callFirstApi(url).then(data => {
       expect(data).toMatchObject({success: true});
     });
-  })
+})

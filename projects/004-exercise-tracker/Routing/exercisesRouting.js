@@ -29,7 +29,7 @@ router.post('/:_id/exercises', (req, res) =>{
           duration: user.description,
           date: user.date
         }]
-      }
+    }
     //count user's exercises  
     UserExercies.count = UserExercies.length
    
@@ -41,7 +41,7 @@ router.post('/:_id/exercises', (req, res) =>{
       }
       console.log("JSON data is saved.");
     })
-    res.status(200).json({success : true, date : exercises
+      res.status(200).json({success : true, date : exercises
     })
   } catch (error) {
       console.error(error + 'user not found')

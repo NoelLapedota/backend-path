@@ -9,26 +9,24 @@ app.get('/', (req, res) => res.send('Home!'))
 //Route Params
 app.get('/api/:date', (req, res) => {
  try{
-    inputDate = req.params.date
-    resObj = {}
+    const inputDate = req.params.date
+    const resObj = {}
     //if it has one of these features convert to obj
     if (inputDate.includes(" ") ||inputDate.includes(":") || inputDate.includes("-")){
-        unixDate = Date.parse(inputDate)
-        utcDate = new Date(inputDate).toUTCString()
-        resObj = {
-            unix : unixDate,
-            utc : utcDate
+        
+        const resObj = {
+            unix :Date.parse(inputDate),
+            utc : new Date(inputDate).toUTCString()
         }
-         res.json(resObj)
+        res.json(resObj)
     }
     //a request to /api/1451001600000 should return { unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" }
     //The isNaN() function determines whether a value is NaN or not
     if (isNaN(inputDate) == false) {
-        inputDate = parseInt(inputDate)
-        utcDate = new Date(inputDate).toUTCString()
+       
         resObj = {
-            unix : inputDate,
-            utc : utcDate
+            unix : parseInt(inputDate),
+            utc : new Date(inputDate).toUTCString()
         }
         res.json(resObj)
     }
